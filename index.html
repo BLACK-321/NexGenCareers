@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexGen Job Portal & Prep - Ace Your Career</title>
+    <meta name="description" content="Ultimate platform for your job search and interview preparation. DSA sheets, Aptitude, HR, and Company-specific insights.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Inter and Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-dark">
+    <!-- Navigation Bar -->
+    <nav class="navbar glass">
+        <div class="container container-flex">
+            <a href="index.html" class="logo">
+                <span class="gradient-text">NexGen</span> Careers
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Jobs</a></li>
+                <li><a href="prep.html">Preparation</a></li>
+                <li><a href="company.html">Companies</a></li>
+                <li><a href="dsa.html">DSA Sheets</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-secondary">Login</button>
+                <button class="btn btn-primary">Sign Up</button>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title animate-up">Your Future <span class="gradient-text">Starts Here</span></h1>
+                <p class="hero-subtitle animate-up delay-1">Find your dream job and preparation tools to ace every round of the hiring process. One-stop solution for tech career seekers.</p>
+                
+                <div class="search-box glass animate-up delay-2">
+                    <div class="search-field">
+                        <i class="fas fa-briefcase"></i>
+                        <input type="text" placeholder="Job Title or Keyword">
+                    </div>
+                    <div class="search-field">
+                        <i class="fas fa-location-dot"></i>
+                        <input type="text" placeholder="Location">
+                    </div>
+                    <button class="btn btn-primary btn-search">Search Jobs</button>
+                </div>
+            </div>
+            <div class="hero-visual animate-fade">
+                <img src="hero_job_portal_1775222021885.png" alt="Career Vision" class="hero-image glass">
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Categories -->
+    <section class="section glass-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explore <span class="gradient-text">Preparation</span></h2>
+                <p class="section-subtitle">Everything you need to master your next interview round.</p>
+            </div>
+            <div class="grid grid-4">
+                <div class="card prep-card glass-card hover-glow">
+                    <div class="card-icon gradient-bg-1"><i class="fas fa-brain"></i></div>
+                    <h3>Aptitude</h3>
+                    <p>Quantitative, Logical, and Verbal reasoning tests with solved examples.</p>
+                    <a href="prep.html#aptitude" class="card-link">Start Learning <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="card prep-card glass-card hover-glow">
+                    <div class="card-icon gradient-bg-2"><i class="fas fa-code"></i></div>
+                    <h3>DSA</h3>
+                    <p>Master Data Structures & Algorithms with our curated topic-wise sheets.</p>
+                    <a href="dsa.html" class="card-link">View Sheets <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="card prep-card glass-card hover-glow">
+                    <div class="card-icon gradient-bg-3"><i class="fas fa-users-gear"></i></div>
+                    <h3>HR Prep</h3>
+                    <p>Behavioral questions and expert tips to impress your recruitment team.</p>
+                    <a href="prep.html#hr" class="card-link">Read Tips <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="card prep-card glass-card hover-glow">
+                    <div class="card-icon gradient-bg-4"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Technology</h3>
+                    <p>Core concepts of CS: DBMS, OS, Networking, and latest Tech stacks.</p>
+                    <a href="prep.html#tech" class="card-link">Explore Notes <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Jobs Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured <span class="gradient-text">Job Openings</span></h2>
+                <p class="section-subtitle">Latest opportunities from top tier companies.</p>
+            </div>
+            <div class="job-list grid grid-3" id="job-container">
+                <!-- Jobs will be loaded here via JS -->
+                 <div class="glass-card job-skeleton">Loading exciting opportunities...</div>
+            </div>
+            <div class="center-content mt-4">
+                <button class="btn btn-outline">Show All Jobs</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer glass-top">
+        <div class="container grid grid-4">
+            <div class="footer-brand">
+                <a href="#" class="logo mb-2"><span class="gradient-text">NexGen</span> Careers</a>
+                <p>Empowering the next generation of tech professionals with jobs and preparation.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Job Portal</a></li>
+                    <li><a href="prep.html">Prep Resources</a></li>
+                    <li><a href="company.html">Company Patterns</a></li>
+                    <li><a href="dsa.html">DSA Sheet</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Aptitude</a></li>
+                    <li><a href="#">HR Rounds</a></li>
+                    <li><a href="#">DBMS & OS</a></li>
+                    <li><a href="#">Web Dev</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay Updated</h4>
+                <p>Subscribe to get the latest job alerts and resources.</p>
+                <div class="newsletter-input glass">
+                    <input type="email" placeholder="Your email">
+                    <button class="btn btn-primary">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 NexGen Careers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

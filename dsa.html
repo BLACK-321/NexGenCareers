@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Mastery Sheet - NexGen Careers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .dsa-header { padding: 8rem 0 4rem; text-align: center; }
+        .progress-container { max-width: 800px; margin: 2rem auto; }
+        .progress-bar-bg { height: 12px; background: rgba(255,255,255,0.05); border-radius: 10px; overflow: hidden; margin-bottom: 0.5rem; }
+        .progress-fill { height: 100%; background: var(--grad-1); width: 0%; transition: 0.8s ease-in-out; }
+        .dsa-section { margin-bottom: 3rem; }
+        .dsa-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; overflow: hidden; border-radius: 1rem; border: 1px solid var(--border-glass); }
+        .dsa-table th, .dsa-table td { padding: 1rem 1.5rem; text-align: left; background: var(--card-bg); border-bottom: 1px solid var(--border-glass); }
+        .dsa-table th { background: rgba(255,255,255,0.05); font-weight: 600; color: var(--text-secondary); text-transform: uppercase; font-size: 0.8rem; }
+        .dsa-table tr:last-child td { border: none; }
+        .diff-tag { padding: 0.2rem 0.6rem; border-radius: 0.5rem; font-size: 0.75rem; font-weight: 600; }
+        .diff-easy { color: #22c55e; background: rgba(34, 197, 94, 0.1); }
+        .diff-medium { color: #eab308; background: rgba(234, 179, 8, 0.1); }
+        .diff-hard { color: #ef4444; background: rgba(239, 68, 68, 0.1); }
+        .check-column { width: 40px; }
+        .check-container { position: relative; cursor: pointer; user-select: none; }
+        .check-container input { position: absolute; opacity: 0; cursor: pointer; }
+        .checkmark { position: absolute; top: -10px; left: 0; height: 18px; width: 18px; background-color: rgba(255,255,255,0.05); border: 2px solid var(--border-glass); border-radius: 4px; }
+        .check-container input:checked ~ .checkmark { background-color: #4f46e5; border-color: #4f46e5; }
+        .checkmark:after { content: ""; position: absolute; display: none; left: 5px; top: 1px; width: 4px; height: 9px; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+        .check-container input:checked ~ .checkmark:after { display: block; }
+        .completed tr td { color: var(--text-secondary); text-decoration: line-through; opacity: 0.6; }
+    </style>
+</head>
+<body class="bg-dark">
+    <nav class="navbar glass">
+        <div class="container container-flex">
+            <a href="index.html" class="logo"><span class="gradient-text">NexGen</span> Careers</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Jobs</a></li>
+                <li><a href="prep.html">Preparation</a></li>
+                <li><a href="company.html">Companies</a></li>
+                <li><a href="dsa.html" class="active">DSA Sheets</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="dsa-header">
+        <div class="container">
+            <h1 class="gradient-text">Master DSA Step-by-Step</h1>
+            <p>Your comprehensive topic-wise sheet to conquer technical interviews.</p>
+            <div class="progress-container">
+                <div class="progress-bar-bg"><div class="progress-fill" id="dsa-progress"></div></div>
+                <p id="stats-text" class="text-secondary">0 / 15 Problems Solved (0%)</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Arrays Section -->
+        <div class="dsa-section">
+            <h2 class="section-title">Arrays & <span class="gradient-text">Hashing</span></h2>
+            <table class="dsa-table">
+                <thead>
+                    <tr>
+                        <th class="check-column">Status</th>
+                        <th>Problem Title</th>
+                        <th>Difficulty</th>
+                        <th>Resources</th>
+                    </tr>
+                </thead>
+                <tbody id="problems-tbody">
+                    <!-- Topic: Arrays -->
+                    <tr data-id="1">
+                        <td><label class="check-container"><input type="checkbox"><span class="checkmark"></span></label></td>
+                        <td>Two Sum</td>
+                        <td><span class="diff-tag diff-easy">Easy</span></td>
+                        <td><a href="#" class="text-primary"><i class="fas fa-external-link-alt"></i></a></td>
+                    </tr>
+                    <tr data-id="2">
+                        <td><label class="check-container"><input type="checkbox"><span class="checkmark"></span></label></td>
+                        <td>Maximum Subarray (Kadane's)</td>
+                        <td><span class="diff-tag diff-easy">Easy</span></td>
+                        <td><a href="#" class="text-primary"><i class="fas fa-external-link-alt"></i></a></td>
+                    </tr>
+                    <tr data-id="3">
+                        <td><label class="check-container"><input type="checkbox"><span class="checkmark"></span></label></td>
+                        <td>Sort 0s 1s 2s</td>
+                        <td><span class="diff-tag diff-medium">Medium</span></td>
+                        <td><a href="#" class="text-primary"><i class="fas fa-external-link-alt"></i></a></td>
+                    </tr>
+                    <tr data-id="4">
+                        <td><label class="check-container"><input type="checkbox"><span class="checkmark"></span></label></td>
+                        <td>Best Time to Buy/Sell Stock</td>
+                        <td><span class="diff-tag diff-easy">Easy</span></td>
+                        <td><a href="#" class="text-primary"><i class="fas fa-external-link-alt"></i></a></td>
+                    </tr>
+                    <!-- Topic: Strings -->
+                    <tr data-id="5">
+                        <td><label class="check-container"><input type="checkbox"><span class="checkmark"></span></label></td>
+                        <td>Valid Palindrome</td>
+                        <td><span class="diff-tag diff-easy">Easy</span></td>
+                        <td><a href="#" class="text-primary"><i class="fas fa-external-link-alt"></i></a></td>
+                    </tr>
+                    <tr data-id="6">
+                        <td><label class="check-container"><input type="checkbox"><span class="checkmark"></span></label></td>
+                        <td>Longest Substring Without Repeating Char</td>
+                        <td><span class="diff-tag diff-medium">Medium</span></td>
+                        <td><a href="#" class="text-primary"><i class="fas fa-external-link-alt"></i></a></td>
+                    </tr>
+                    <!-- More rows... shortened for example -->
+                </tbody>
+            </table>
+        </div>
+        <div class="dsa-section">
+            <h2 class="section-title">Linked List</h2>
+            <table class="dsa-table">
+                <thead>
+                    <tr><th class="check-column">Status</th><th>Problem Title</th><th>Difficulty</th><th>Resources</th></tr>
+                </thead>
+                <tbody id="problems-tbody-2">
+                    <tr data-id="7"><td><label class="check-container"><input type="checkbox"><span class="checkmark"></span></label></td><td>Reverse a Linked List</td><td><span class="diff-tag diff-easy">Easy</span></td><td><a href="#"><i class="fas fa-external-link-alt"></i></a></td></tr>
+                    <tr data-id="8"><td><label class="check-container"><input type="checkbox"><span class="checkmark"></span></label></td><td>Merge Two Sorted Lists</td><td><span class="diff-tag diff-easy">Easy</span></td><td><a href="#"><i class="fas fa-external-link-alt"></i></a></td></tr>
+                    <tr data-id="9"><td><label class="check-container"><input type="checkbox"><span class="checkmark"></span></label></td><td>Detect Cycle in Linked List</td><td><span class="diff-tag diff-medium">Medium</span></td><td><a href="#"><i class="fas fa-external-link-alt"></i></a></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const totalProblems = checkboxes.length;
+            const progressFill = document.getElementById('dsa-progress');
+            const statsText = document.getElementById('stats-text');
+
+            // Load saved status
+            checkboxes.forEach(box => {
+                const tr = box.closest('tr');
+                const id = tr.dataset.id;
+                if (localStorage.getItem(`dsa-${id}`) === 'true') {
+                    box.checked = true;
+                    tr.classList.add('completed-row'); // Just to track locally
+                }
+                
+                box.addEventListener('change', () => {
+                    localStorage.setItem(`dsa-${id}`, box.checked);
+                    updateProgress();
+                });
+            });
+
+            function updateProgress() {
+                const checked = Array.from(checkboxes).filter(b => b.checked).length;
+                const percent = Math.round((checked / totalProblems) * 100);
+                progressFill.style.width = percent + '%';
+                statsText.textContent = `${checked} / ${totalProblems} Problems Solved (${percent}%)`;
+            }
+
+            updateProgress();
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

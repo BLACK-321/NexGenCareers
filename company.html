@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Hiring Process - NexGen Careers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .company-header { padding: 8rem 0 4rem; text-align: center; }
+        .company-search-box { max-width: 600px; margin: 2rem auto; }
+        .company-list { margin: 4rem 0; }
+        .pattern-card { height: 100%; border-radius: 1.5rem; transition: 0.4s ease; transform-style: preserve-3d; }
+        .pattern-card:hover { transform: translateY(-10px); }
+        .label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 0.5rem; display: block; }
+        .value { color: white; display: block; margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-dark">
+    <nav class="navbar glass">
+        <div class="container container-flex">
+            <a href="index.html" class="logo"><span class="gradient-text">NexGen</span> Careers</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Jobs</a></li>
+                <li><a href="prep.html">Preparation</a></li>
+                <li><a href="company.html" class="active">Companies</a></li>
+                <li><a href="dsa.html">DSA Sheets</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="company-header">
+        <div class="container">
+            <h1 class="gradient-text">Hiring Processes</h1>
+            <p>Know the exam patterns, syllabus, and eligibility for top tech firms.</p>
+            <div class="company-search-box glass">
+                <div class="search-field">
+                    <i class="fas fa-building"></i>
+                    <input type="text" placeholder="Search company (e.g. Google, Amazon)...">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="company-list container">
+        <div class="grid grid-3" id="company-container">
+            <div class="glass-card pattern-card hover-glow">
+                <h3>Google</h3>
+                <p class="text-secondary mb-2">Software Engineering Process</p>
+                <div class="mt-2">
+                    <span class="label">Exam Pattern</span>
+                    <span class="value">Online Assessment -> 3-4 Coding Rounds -> HR</span>
+                    <span class="label">Priority Subjects</span>
+                    <span class="value">DSA, Advanced Algorithms, System Design</span>
+                    <span class="label">Eligibility</span>
+                    <span class="value">CGPA 7.5+, No active backlogs</span>
+                </div>
+                <button class="btn btn-primary full-width mt-2">View Syllabus</button>
+            </div>
+            <div class="glass-card pattern-card hover-glow">
+                <h3>Amazon</h3>
+                <p class="text-secondary mb-2">SDE Hiring Process</p>
+                <div class="mt-2">
+                    <span class="label">Exam Pattern</span>
+                    <span class="value">OA (Coding + Aptitude) -> 2 Technical -> 1 BarRaiser</span>
+                    <span class="label">Priority Subjects</span>
+                    <span class="value">Leadership Principles, DSA, OOPs</span>
+                    <span class="label">Eligibility</span>
+                    <span class="value">Relevant Degree, Strong Problem Solving</span>
+                </div>
+                <button class="btn btn-primary full-width mt-2">View Syllabus</button>
+            </div>
+            <div class="glass-card pattern-card hover-glow">
+                <h3>TCS Ninja/Digital</h3>
+                <p class="text-secondary mb-2">Mass Hiring Pattern</p>
+                <div class="mt-2">
+                    <span class="label">Exam Pattern</span>
+                    <span class="value">Common NQT (Foundation + Advance) -> Interview</span>
+                    <span class="label">Priority Subjects</span>
+                    <span class="value">Aptitude, Core Languages (C/C++), DBMS</span>
+                    <span class="label">Eligibility</span>
+                    <span class="value">Engineering Student, 60% Throughout Career</span>
+                </div>
+                <button class="btn btn-primary full-width mt-2">View Syllabus</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple client-side search for companies
+        const searchInput = document.querySelector('.company-search-box input');
+        const cards = document.querySelectorAll('.pattern-card');
+        
+        if (searchInput) {
+            searchInput.addEventListener('keyup', () => {
+                const term = searchInput.value.toLowerCase();
+                cards.forEach(card => {
+                    const name = card.querySelector('h3').textContent.toLowerCase();
+                    card.style.display = name.includes(term) ? 'block' : 'none';
+                });
+            });
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
